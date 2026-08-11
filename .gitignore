@@ -112,3 +112,10 @@ data/processed/
 
 *.tmp
 *.temp
+
+# =========================
+# External geospatial data
+# =========================
+
+data/external/
+*.osm.pbf
