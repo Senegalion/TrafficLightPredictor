@@ -1,55 +1,117 @@
 # Traffic Light Predictor
 
-Intelligent traffic signal phase and timing prediction system for Łódź.
+> Intelligent traffic signal phase and timing prediction system for Łódź, Poland.
 
 ## Project Status
 
-🚧 Early development
+🚧 **Research & Development**
 
-## Overview
+The project is currently in the data acquisition and feasibility validation stage.
 
-Traffic Light Predictor is a system designed to estimate the current phase and predict the remaining time of traffic signals at intersections.
+## Problem
 
-The initial target area is Łódź, Poland.
+Drivers approaching traffic-light-controlled intersections often do not know how long the current signal phase will last.
 
-## Goals
+Traffic Light Predictor aims to estimate the current traffic signal phase and predict the approximate time until the next phase change.
 
-- Collect traffic signal observations
-- Build a database of traffic signal intersections
-- Analyze traffic signal cycles and phase patterns
-- Predict traffic signal phase changes
-- Provide estimated remaining time for the current phase
-- Evaluate prediction accuracy
-- Provide a mobile interface for drivers
-- Provide a web dashboard for system analysis
+The system is designed to provide predictions before the driver reaches the intersection.
 
-## Initial Area
+## Initial Scope
 
-- Łódź
+The first version focuses exclusively on:
 
-## Planned Components
+- 📍 Łódź, Poland
+
+Additional cities may be supported in future versions.
+
+## Core Idea
+
+```text
+GPS
+ ↓
+Upcoming intersection
+ ↓
+Traffic signal identification
+ ↓
+Historical observations
+ ↓
+Prediction model
+ ↓
+Current phase + estimated time to change
+ ↓
+Mobile application
+```
+
+## Example
+
+🟢 GREEN
+
+Estimated change:
+~12 seconds
+
+Confidence:
+87%
+
+The system must be able to indicate when a reliable prediction is not available.
+
+## Main Components
 
 - Data Collector
+- Geospatial Data Service
+- Prediction / ML Pipeline
 - Backend API
-- Machine Learning
-- Mobile Application
+- Android Application
 - Analytics Dashboard
 - Infrastructure
 
 ## Technology
 
-Planned technologies include:
-
+### Backend
 - Java
 - Spring Boot
 - PostgreSQL
 - PostGIS
+
+### Data & ML
 - Python
-- Machine Learning
-- Android / Kotlin
+- pandas
+- NumPy
+- scikit-learn
+
+### Mobile
+- Kotlin
+- Android
+
+### Infrastructure
 - Docker
+- GitHub Actions
 - Kubernetes
+
+## Development Approach
+
+The project follows an experiment-driven approach.
+
+The first objective is not to build the complete application.
+
+The first objective is to determine whether real traffic signal observations contain enough information to make useful predictions.
+
+Development therefore starts with:
+
+1. Data source research
+2. Traffic signal mapping
+3. Observation collection
+4. Dataset creation
+5. Baseline prediction
+6. Machine learning
+7. Backend
+8. Mobile application
+
+## Documentation
+
+- [Project Analysis](docs/project-analysis.md)
+
+The project analysis contains the project's assumptions, risks, research hypothesis, success criteria, and development plan.
 
 ## License
 
-TBD
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
