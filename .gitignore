@@ -119,3 +119,11 @@ data/processed/
 
 data/external/
 *.osm.pbf
+# =========================
+# Traffic Light Predictor - generated artefacts
+# =========================
+
+ml/artifacts/
+ml/data/
+*.egg-info/
+coverage/
