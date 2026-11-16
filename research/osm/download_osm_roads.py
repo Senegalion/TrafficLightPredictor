@@ -12,25 +12,27 @@ USER_AGENT = (
 )
 
 QUERY = """
-[out:json][timeout:120];
+[out:json][timeout:180];
 
 area["name"="Łódź"]["boundary"="administrative"]["admin_level"="6"]->.searchArea;
 
-node["highway"="traffic_signals"](area.searchArea);
+way["highway"](area.searchArea);
 
 out body;
+>;
+out skel qt;
 """
 
 
 OUTPUT_FILE = (
-    Path(__file__).resolve().parent.parent
+    Path(__file__).resolve().parents[2]
     / "data"
     / "raw"
-    / "lodz_traffic_signals.json"
+    / "lodz_roads.json"
 )
 
 
-def download_traffic_signals() -> dict:
+def download_roads() -> dict:
     response = requests.post(
         OVERPASS_URL,
         data={"data": QUERY},
@@ -38,7 +40,7 @@ def download_traffic_signals() -> dict:
             "User-Agent": USER_AGENT,
             "Accept-Encoding": "gzip, deflate",
         },
-        timeout=180,
+        timeout=240,
     )
 
     response.raise_for_status()
@@ -54,16 +56,30 @@ def save_data(data: dict) -> None:
 
 
 def main() -> None:
-    print("Downloading traffic signals from OpenStreetMap...")
+    print("Downloading road network from OpenStreetMap...")
     print(f"Overpass endpoint: {OVERPASS_URL}")
 
-    data = download_traffic_signals()
+    data = download_roads()
 
     elements = data.get("elements", [])
 
+    ways = [
+        element
+        for element in elements
+        if element.get("type") == "way"
+    ]
+
+    nodes = [
+        element
+        for element in elements
+        if element.get("type") == "node"
+    ]
+
     save_data(data)
 
-    print(f"Traffic signals found: {len(elements)}")
+    print(f"Road ways found: {len(ways)}")
+    print(f"Road nodes found: {len(nodes)}")
+    print(f"Total OSM elements: {len(elements)}")
     print(f"Saved to: {OUTPUT_FILE}")
 
 

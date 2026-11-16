@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 INPUT_FILE = (
-    Path(__file__).resolve().parent.parent
+    Path(__file__).resolve().parents[2]
     / "data"
     / "raw"
     / "lodz_traffic_signals.json"

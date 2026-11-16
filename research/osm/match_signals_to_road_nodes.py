@@ -5,7 +5,7 @@ from pathlib import Path
 import osmium
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 MIN_LAT = 51.6994795
 MAX_LAT = 51.8291963

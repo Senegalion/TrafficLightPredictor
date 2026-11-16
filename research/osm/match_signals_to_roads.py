@@ -6,7 +6,7 @@ from shapely.geometry import Point, shape
 from shapely.strtree import STRtree
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 SIGNALS_FILE = (
     PROJECT_ROOT

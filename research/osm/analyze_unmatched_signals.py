@@ -6,7 +6,7 @@ from pyproj import Transformer
 from scipy.spatial import cKDTree
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 PBF_FILE = (
     PROJECT_ROOT

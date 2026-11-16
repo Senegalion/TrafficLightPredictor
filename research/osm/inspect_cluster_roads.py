@@ -6,7 +6,7 @@ from collections import defaultdict
 from pyproj import Transformer
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 SIGNALS_FILE = (
     PROJECT_ROOT

@@ -5,7 +5,7 @@ from pathlib import Path
 from pyproj import Transformer
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_FILE = (
     PROJECT_ROOT

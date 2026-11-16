@@ -3,7 +3,7 @@ from pathlib import Path
 from collections import defaultdict
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 INTERSECTIONS_FILE = (
     PROJECT_ROOT
