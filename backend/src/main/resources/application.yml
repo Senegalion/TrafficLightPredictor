@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: traffic-light-predictor
+  datasource:
+    url: ${TLP_DB_URL:jdbc:postgresql://localhost:5432/traffic_light_predictor}
+    username: ${TLP_DB_USER:tlp}
+    password: ${TLP_DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: ${TLP_BACKEND_PORT:8080}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+tlp:
+  web:
+    ingestion-api-key: ${TLP_INGEST_API_KEY:}
+    cors-allowed-origins: ${TLP_CORS_ALLOWED_ORIGINS:http://localhost:5173}
+  ml:
+    base-url: ${TLP_ML_BASE_URL:http://localhost:8000}
+    connect-timeout: PT2S
+    read-timeout: PT5S
+  observations:
+    max-clock-skew: PT1M
+  predictions:
+    max-anchor-age: PT15M
+    max-future-target: PT2M
+    max-past-target: P7D

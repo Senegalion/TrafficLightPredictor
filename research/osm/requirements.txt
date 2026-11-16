@@ -1,0 +1,5 @@
+requests>=2.31
+osmium>=3.7
+pyproj>=3.6
+shapely>=2.0
+scipy>=1.11

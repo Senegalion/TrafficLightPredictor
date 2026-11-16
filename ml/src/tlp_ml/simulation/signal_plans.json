@@ -1,0 +1,55 @@
+{
+  "_comment": "SYNTHETIC signal timing plans for demonstration only. These are NOT real timing plans of Lodz traffic signal controllers. Intersection locations in the backend seed come from OpenStreetMap; every timing value below was invented. Greens are seconds per time band: [main_green_s, cross_green_s].",
+  "defaults": {
+    "yellow_s": 3,
+    "all_red_s": 2,
+    "green_jitter_s": 2.0,
+    "extension_probability": 0.08,
+    "extension_s": 8,
+    "min_green_s": 6
+  },
+  "intersections": [
+    {
+      "intersection_code": "LDZ-KOS-STR",
+      "main_signal": "LDZ-KOS-STR-S1",
+      "cross_signal": "LDZ-KOS-STR-S2",
+      "greens": {"NIGHT": [30, 12], "AM_PEAK": [52, 28], "PM_PEAK": [55, 30], "OFF_PEAK": [42, 24], "WEEKEND": [38, 22]}
+    },
+    {
+      "intersection_code": "LDZ-KOS-ZAM",
+      "main_signal": "LDZ-KOS-ZAM-S1",
+      "cross_signal": "LDZ-KOS-ZAM-S2",
+      "greens": {"NIGHT": [28, 14], "AM_PEAK": [48, 26], "PM_PEAK": [50, 28], "OFF_PEAK": [40, 22], "WEEKEND": [36, 20]},
+      "green_jitter_s": 2.5
+    },
+    {
+      "intersection_code": "LDZ-SIE-NAR",
+      "main_signal": "LDZ-SIE-NAR-S1",
+      "cross_signal": "LDZ-SIE-NAR-S2",
+      "greens": {"NIGHT": [25, 15], "AM_PEAK": [35, 30], "PM_PEAK": [38, 32], "OFF_PEAK": [30, 26], "WEEKEND": [28, 24]},
+      "extension_probability": 0.15
+    },
+    {
+      "intersection_code": "LDZ-KOP-POM",
+      "main_signal": "LDZ-KOP-POM-S1",
+      "cross_signal": "LDZ-KOP-POM-S2",
+      "greens": {"NIGHT": [35, 15], "AM_PEAK": [60, 32], "PM_PEAK": [62, 34], "OFF_PEAK": [48, 28], "WEEKEND": [44, 26]},
+      "green_jitter_s": 3.0
+    },
+    {
+      "intersection_code": "LDZ-PRZ-LEC",
+      "main_signal": "LDZ-PRZ-LEC-S1",
+      "cross_signal": "LDZ-PRZ-LEC-S2",
+      "greens": {"NIGHT": [32, 12], "AM_PEAK": [50, 24], "PM_PEAK": [54, 26], "OFF_PEAK": [42, 20], "WEEKEND": [40, 18]},
+      "green_jitter_s": 4.0,
+      "extension_probability": 0.2,
+      "extension_s": 10
+    },
+    {
+      "intersection_code": "LDZ-BAR-PAB",
+      "main_signal": "LDZ-BAR-PAB-S1",
+      "cross_signal": "LDZ-BAR-PAB-S2",
+      "greens": {"NIGHT": [34, 14], "AM_PEAK": [58, 30], "PM_PEAK": [60, 30], "OFF_PEAK": [46, 26], "WEEKEND": [42, 24]}
+    }
+  ]
+}
