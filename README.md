@@ -46,12 +46,12 @@ The project depends on collecting and analysing traffic signal observations and 
 
 Potential data sources include:
 
-- **OpenStreetMap:** static road infrastructure, traffic signal locations, intersections and road geometry.
-- **Open Data Łódź:** potentially useful transport, public infrastructure and spatial datasets.
+- **[OpenStreetMap](https://www.openstreetmap.org/):** road infrastructure, intersection locations, road geometry and potentially mapped traffic signals.
+- **[Open Data Łódź – Transport and Communication](https://otwarte.miasto.lodz.pl/transport_komunikacja/):** public transport datasets, including static GTFS data (routes, stops and timetables) and GTFS-Realtime data (vehicle positions, trip updates and service alerts). These datasets could provide additional context about public transport activity near selected intersections.
 - **Own observations:** collected traffic signal phases, timestamps, GPS positions, intersection identifiers and travel directions.
 - **Additional contextual data:** time of day, day of the week, weather and traffic volume, where available.
 
-One of the main challenges is the availability of reliable historical or real-time traffic signal phase data. Some observations may need to be collected independently.
+It is important to note that the available Open Data Łódź transport datasets do not directly provide historical traffic signal phases or signal timing information. Collecting reliable traffic light observations will therefore be a key part of the project.
 
 Potential AI and data analysis methods include:
 
@@ -100,7 +100,7 @@ In the future, the project could be expanded to other cities, incorporate crowds
 
 - [Elements of AI – Building AI](https://buildingai.elementsofai.com/) – educational material and inspiration for this project.
 - [OpenStreetMap](https://www.openstreetmap.org/) – potential source of geographical and road infrastructure data.
-- [Open Data Łódź](https://uml.lodz.pl/) – potential source of local public datasets.
+- [Open Data Łódź – Transport and Communication](https://otwarte.miasto.lodz.pl/transport_komunikacja/) – public transport datasets for Łódź, including GTFS and GTFS-Realtime data.
 
 This project is an independent educational initiative. External datasets, software and other materials will be credited according to their respective licences and terms of use.
 
